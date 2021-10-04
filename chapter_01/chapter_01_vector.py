@@ -17,6 +17,10 @@ class Vector:
     def __bool__(self):
         return bool(abs(self))
 
+    # faster implementation of boolean
+    # def __bool__(self):
+    #     return bool(self.x or self.y)
+
     # define the addition operation
     def __add__(self, v):
         return Vector(self.x + v.x, self.y + v.y)
@@ -32,4 +36,8 @@ if __name__ == "__main__":
     print(v)
     # print(vstr)
     print(bool(v))
+    print(bool(Vector(x = 0, y = 0)))
     print(v * 3)
+
+    tl = [1, 2, 1, 2]
+    print(tl.count(1))
