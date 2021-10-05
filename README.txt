@@ -22,3 +22,13 @@ In Python line breaks are ignored in [], {}, ()
 ord: converts to unicode integer position
 chr: converts from unicode integer position to text
 
+The "key" in sorted should be a function that takes an input and returns a value to be sorted by.
+
+% parameters accepts tuple unpacking when used like this:
+
+    for passport in sorted(traveler_ids):
+        print('%s/%s' % passport)
+
+Tuple are very handy :)
+
+
