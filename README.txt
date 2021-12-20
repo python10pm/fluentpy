@@ -45,3 +45,17 @@ Lessons from strange tuple assignment
 • Augmented assignment is not an atomic operation—we just saw it throwing an exception after doing part of its job.
 
 In Python the convention is: if you modify something in place, you have to return None to "signal" that it changed the object inplace.
+
+20/12/2021.
+Bisect is very useful to perform searching of sorted sequences.
+You can use bisect_left or bisect_right.
+
+bisect.insort() allows to insert new elements into the sequence so that it will
+remain sorted.
+
+Arrays are very convenient because they are really fast.
+
+Numpy and Scipy are also very cool libraries.
+
+Deques are thread safe for multithreading applications. You can use LIFO or FIFO methods to insert at the begging or the end of the deque.
+
