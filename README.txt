@@ -1,5 +1,7 @@
 Resumen Fluent Python:
 
+****************************CHAPTER 1****************************
+
 1. Chapter 1: The Python Data Model
 -> Cards:
 --> __getitem__ if implemented add slicing, in/contains and iteration functionality.
@@ -9,6 +11,8 @@ Resumen Fluent Python:
 --> __str__ is intended for end user.
 --> Reversed operators: are fallbacks used when operands are swapped (b * a instead of a * b).
 --> Augmented assignments are shortcuts combining an infix operator with variable assign‐ ment (a = a * b becomes a *= b).
+
+****************************CHAPTER 2****************************
 
 2. Chapter 2: An Array of Sequences.
 
@@ -59,3 +63,37 @@ Numpy and Scipy are also very cool libraries.
 
 Deques are thread safe for multithreading applications. You can use LIFO or FIFO methods to insert at the begging or the end of the deque.
 
+****************************CHAPTER 3****************************
+Python sets and dicts are optimized with hash tables.
+
+Keys in dicts must be hashable.
+
+The atomic immutable types (str, bytes, numeric types) are all hashable. A frozen set is always hashable, because its elements must be hashable by definition. A tuple is hashable only if all its items are hashable.
+
+dict.setdefault is more efficient:
+
+In other words, the end result of this line...
+my_dict.setdefault(key, []).append(new_value) 
+...is the same as running...
+if key not in my_dict: my_dict[key] = []
+my_dict[key].append(new_value)
+
+
+# EFFICIENT DICT
+index = {}
+
+index_efficient = {}
+
+# this doesn't work, needs a callable
+# index_default_dict = collections.defaultdict([])
+index_default_dict = collections.defaultdict(list)
+
+occurences = index.get(word, []) # first check: see if you have a word otherwise[] 
+occurences.append(location) # append to [] new location
+index[word] = occurences # another lookup to add key and values
+
+index_efficient.setdefault(word, []).append(location)
+
+index_default_dict[word].append(location)
+
+NEXT --> The __missing__ Method
